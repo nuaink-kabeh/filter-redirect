@@ -1,45 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Redirect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+background:#000;
+color:#fff;
+font-family:Arial, sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+flex-direction:column;
+text-align:center;
+}
+
+.loader{
+border:5px solid #333;
+border-top:5px solid #00c853;
+border-radius:50%;
+width:50px;
+height:50px;
+animation:spin 1s linear infinite;
+margin-bottom:20px;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+.small{
+font-size:14px;
+color:#aaa;
+margin-top:10px;
+}
+</style>
+
 </head>
 <body>
 
+<div class="loader"></div>
+
+<div>Please wait...</div>
+<div class="small">Preparing content</div>
+
 <script>
-(function () {
 
-    // === BASIC ENV CHECK ===
-    if (!navigator.userAgent) return;
+var url = "https://potentialmaydrench.com/jm8i7er9?key=118c309f728217af88214fc1bc1e64ed";
 
-    const ua = navigator.userAgent.toLowerCase();
+setTimeout(function(){
 
-    // === BLOCK OBVIOUS BOTS ONLY ===
-    if (
-        ua.includes("headless") ||
-        ua.includes("phantom") ||
-        ua.includes("crawler") ||
-        ua.includes("spider") ||
-        ua.includes("bot")
-    ) return;
+window.location.href = url;
 
-    // === PREVENT MULTIPLE REDIRECT ===
-    if (sessionStorage.getItem("rd_done")) return;
-    sessionStorage.setItem("rd_done", "1");
+}, 4000);
 
-    // === SAFE DELAY FOR IMPRESSION ===
-    setTimeout(function () {
-        try {
-            window.top.location.replace("https://potentialmaydrench.com/jm8i7er9?key=118c309f728217af88214fc1bc1e64ed");
-        } catch (e) {
-            window.location.href = "https://potentialmaydrench.com/jm8i7er9?key=118c309f728217af88214fc1bc1e64ed";
-        }
-    }, 5000);
-
-})();
 </script>
-
-<p>Loading…</p>
 
 </body>
 </html>
